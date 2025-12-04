@@ -21,103 +21,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
-    <!-- Bootstrap local para desarrollo offline -->
-     <link rel="stylesheet" href="/home/usuario1/Documents/WebI/bootstrap-5.0.2-dist/css/bootstrap.min.css">
-     <script src="/home/usuario1/Documents/WebI/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
-     <script src="/home/usuario1/Documents/WebI/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script>
+    <!-- Bootstrap local para desarrollo offline BORRAR AL FINAL -->
+    <!-- <link rel="stylesheet" href="/home/usuario1/Documents/WebI/bootstrap-5.0.2-dist/css/bootstrap.min.css">
+    <script src="/home/usuario1/Documents/WebI/bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+    <script src="/home/usuario1/Documents/WebI/bootstrap-5.0.2-dist/js/bootstrap.bundle.js"></script> -->
 
     <!-- Estilos propios -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/carousel.css">
 
-    <style>
-        body {
-            background-color: #f8f9fa;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
-        }
 
-        .carousel-container {
-            max-width: 900px;
-            width: 100%;
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        /* Ajustes para la imagen principal */
-        .main-image {
-            height: 470px; /* Altura solicitada */
-            object-fit: cover;
-            width: 100%;
-            border-radius: 8px;
-        }
-
-        /* --- Estilos Personalizados para las Miniaturas (Indicadores) --- */
-        
-        /* Contenedor de los indicadores */
-        .carousel-indicators-thumb {
-            position: static; /* Para que aparezcan debajo de la imagen, no encima */
-            margin-top: 15px;
-            margin-bottom: 0;
-            display: flex;
-            justify-content: center;
-            gap: 10px; /* Espacio entre miniaturas */
-            flex-wrap: wrap;
-        }
-
-        /* El botón individual del indicador */
-        .carousel-indicators-thumb button {
-            width: 100px !important; /* Ancho de la miniatura */
-            height: auto !important; /* Altura automática */
-            padding: 0 !important;
-            border: 2px solid transparent !important; /* Borde transparente por defecto */
-            background-color: transparent !important;
-            text-indent: 0 !important; /* Sobrescribir estilo de bootstrap para mostrar la imagen */
-            opacity: 0.6; /* Opacidad para inactivos */
-            transition: all 0.3s ease;
-            overflow: hidden;
-            border-radius: 6px;
-        }
-
-        /* Imagen dentro del botón indicador */
-        .carousel-indicators-thumb button img {
-            width: 100%;
-            height: 60px; /* Altura fija para la miniatura */
-            object-fit: cover;
-            display: block;
-            border-radius: 4px;
-        }
-
-        /* Estado Activo */
-        .carousel-indicators-thumb button.active {
-            opacity: 1;
-            border-color: #198754 !important; /* Color verde (success) para el borde activo */
-            transform: scale(1.05); /* Pequeño efecto de zoom */
-        }
-
-        /* Flechas de control personalizadas para que se vean mejor */
-        .carousel-control-prev, .carousel-control-next {
-            width: 5%;
-        }
-
-        /* Responsive: Ajustes para móviles */
-        @media (max-width: 576px) {
-            .main-image {
-                height: 250px;
-            }
-            .carousel-indicators-thumb button {
-                width: 60px !important;
-            }
-            .carousel-indicators-thumb button img {
-                height: 40px;
-            }
-        }
-    </style>
 </head>
 
 <body>
@@ -171,105 +85,108 @@
 
             <div class="col">
                 <div class="carousel-container">
-        <!-- Carrusel -->
-        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
-            
-            <!-- Diapositivas Principales -->
-            <div class="carousel-inner">
-                <!-- Slide 1 -->
-                <div class="carousel-item active">
-                    <img class="d-block w-100 main-image" 
-                         src="images/car1.png" 
-                         alt="Coche Deportivo 1">
+                    <!-- Carrusel -->
+                    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+
+                        <!-- Diapositivas Principales -->
+                        <div class="carousel-inner">
+                            <!-- Slide 1 -->
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 main-image" src="images/car1.png" alt="Coche Deportivo 1">
+                            </div>
+
+                            <!-- Slide 2 -->
+                            <div class="carousel-item">
+                                <img class="d-block w-100 main-image" src="images/car2.webp" alt="Coche Rojo 2">
+                            </div>
+
+                            <!-- Slide 3 -->
+                            <div class="carousel-item">
+                                <img class="d-block w-100 main-image" src="images/car3.webp" alt="Coche Azul 3">
+                            </div>
+                        </div>
+
+                        <!-- Controles (Flechas) -->
+                        <!-- Nota: Usamos data-bs-target y data-bs-slide para compatibilidad total con Bootstrap 5 -->
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon bg-dark bg-opacity-50 rounded p-3"
+                                aria-hidden="true"></span>
+                            <span class="visually-hidden">Anterior</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark"
+                            data-bs-slide="next">
+                            <span class="carousel-control-next-icon bg-dark bg-opacity-50 rounded p-3"
+                                aria-hidden="true"></span>
+                            <span class="visually-hidden">Siguiente</span>
+                        </button>
+
+                        <!-- Indicadores (Miniaturas) -->
+                        <div class="carousel-indicators carousel-indicators-thumb mx-auto">
+
+                            <!-- Miniatura 1 -->
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
+                                class="active" aria-current="true" aria-label="Slide 1">
+                                <img src="images/car1.png" alt="Miniatura 1">
+                            </button>
+
+                            <!-- Miniatura 2 -->
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
+                                aria-label="Slide 2">
+                                <img src="images/car2.webp" alt="Miniatura 2">
+                            </button>
+
+                            <!-- Miniatura 3 -->
+                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
+                                aria-label="Slide 3">
+                                <img src="images/car3.webp" alt="Miniatura 3">
+                            </button>
+
+                        </div>
+                    </div>
                 </div>
-                
-                <!-- Slide 2 -->
-                <div class="carousel-item">
-                    <img class="d-block w-100 main-image" 
-                         src="images/car2.webp" 
-                         alt="Coche Rojo 2">
-                </div>
-                
-                <!-- Slide 3 -->
-                <div class="carousel-item">
-                    <img class="d-block w-100 main-image" 
-                         src="images/car3.webp" 
-                         alt="Coche Azul 3">
-                </div>
+
             </div>
 
-            <!-- Controles (Flechas) -->
-            <!-- Nota: Usamos data-bs-target y data-bs-slide para compatibilidad total con Bootstrap 5 -->
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark bg-opacity-50 rounded p-3" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
-                <span class="carousel-control-next-icon bg-dark bg-opacity-50 rounded p-3" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
 
-            <!-- Indicadores (Miniaturas) -->
-            <div class="carousel-indicators carousel-indicators-thumb mx-auto">
-                
-                <!-- Miniatura 1 -->
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1">
-                    <img src="images/car1.png" alt="Miniatura 1">
-                </button>
-                
-                <!-- Miniatura 2 -->
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2">
-                    <img src="images/car2.webp" alt="Miniatura 2">
-                </button>
-                
-                <!-- Miniatura 3 -->
-                <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3">
-                    <img src="images/car3.webp" alt="Miniatura 3">
-                </button>
-                
-            </div>
-        </div>
-    </div>
-             
-            </div>
-
-               
-            <div class="col" ali>
+            <div class="col">
                 <h2 id="autoName" class="fs-1 text-center" style="color: black;">Nombre del vehículo</h2>
-                <h2 class="fs-2"><dt>Descripción:</dt></h2>
-                <p id="autoDesc" class="fs-5 m-auto">Para ofrecer el servicio más adecuado para cada ocasión, tenemos diversidad de vehículos en la flota,
+                <h2 class="fs-2">
+                    <dt>Descripción:</dt>
+                </h2>
+                <p id="autoDesc" class="fs-5 m-auto">Para ofrecer el servicio más adecuado para cada ocasión, tenemos
+                    diversidad de vehículos en la flota,
                     en constante mantenimiento y detallado para la mejor presentación. Los rangos de precios aproximados
                     son dentro del límite del Anillo Periférico Manuel Gómez Morin de la Zona Metropolitana de
                     Guadalajara (ZMG)</p>
-                
+
                 <div class="d-flex justify-content-end">
                     <div class="d-flex flex-column justify-content-end mx-5">
-                    <h2 class="h2 mt-4">$ Precio</h2>
-                    <h2 class="fs-4 text-secondary">(POR HORA)</h2>
-                    <a href="#" class="btn btn-secondary rounded-pill mt-5 py-3">Solicitar reserva</a>
+                        <h2 class="h2 mt-4">$ Precio</h2>
+                        <h2 class="fs-4 text-secondary">(POR HORA)</h2>
+                        <a href="#" class="btn btn-secondary rounded-pill mt-5 py-3">Solicitar reserva</a>
                     </div>
                 </div>
-                
+
             </div>
-                
+
 
 
         </div>
     </main>
 
-
-
-
     <script src="js/sidebar.js" async defer></script>
+    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
+        
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 </body>
 
 </html>
