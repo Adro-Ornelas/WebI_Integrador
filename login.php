@@ -24,14 +24,15 @@ if ($result->num_rows === 1) {
     $_SESSION["admin"] = $username;
 
     header("Location: admin_dashboard.php");
-    exit;
+    
 
 } else {
     // Login incorrecto
     header("Location: login.php?error=credenciales");
-    exit;
+    
 }
 
 $stmt->close();
 $conn->close();
+
 ?>

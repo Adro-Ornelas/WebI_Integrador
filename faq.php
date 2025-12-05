@@ -11,11 +11,73 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Preguntas Frecuentes</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    
+    
+        <link href="https://cdn.boxicons.com/fonts/basic/boxicons.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Momo+Trust+Display&family=Momo+Trust+Sans:wght@200..800&family=Ms+Madi&display=swap"
+            rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+        <!-- Estilos propios -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/navbar.css">
 </head>
 <body class="bg-light">
 
-<div class="container py-5">
+        <header>
+            <div class="izquierda">
+                <div class="menu-container">
+                    <div class="menu" id="menu">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="brand">
+                <h1 class="nombre">AoRent</h1>
+            </div>
+
+            <div class="derecha">
+                <a href="logout.php">Cerrar sesión</a>
+            </div>
+        </header>
+
+        <div class="sidebar" id="sidebar">
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" class="selected">
+                            <i class="bxr  bxs-home-alt-2"></i>
+                            <span>Inicio</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="bxr  bxs-book-bookmark"></i>
+                            <span>Catalogo</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="bxr  bxs-message-question-mark"></i>
+                            <span>FaQ</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+
+
+
+<div class="container py-5 my-5">
     <h1 class="h1 text-center mb-4">FAQ</h1>
     <p class="text-center">Preguntas Frecuentes</p>
 
@@ -53,7 +115,19 @@ $result = $conn->query($sql);
 
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/sidebar.js" async defer></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+            crossorigin="anonymous"></script>
 </body>
 </html>
 
