@@ -199,7 +199,8 @@ while ($img = $res_img->fetch_assoc()) {
                             $ <?= $row['valorhora'] ?>
                         </h2>
                         <h2 class="fs-4 text-secondary">(POR HORA)</h2>
-                        <a href="#" class="btn btn-secondary rounded-pill mt-5 py-3">Solicitar reserva</a>
+                        <a href="solicitud.php?id=<?=$id?>"
+                         class="btn btn-secondary rounded-pill mt-5 py-3">Solicitar reserva</a>
                     </div>
                 </div>
 
