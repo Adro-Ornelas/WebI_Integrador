@@ -16,6 +16,11 @@ $row = mysqli_fetch_array($result);
 $sql_img = "SELECT foto FROM foto_auto WHERE id_auto = '$id';";
 $res_img = $conn->query($sql_img);
 
+// Guardamos las rutas en un arreglo para usarlo varias veces
+$imagenes = [];
+while ($img = $res_img->fetch_assoc()) {
+    $imagenes[] = $img["foto"];
+}
 
 
 ?>
@@ -111,19 +116,15 @@ $res_img = $conn->query($sql_img);
                         <div class="carousel-inner">
 
                             <?php
-                            if ($res_img->num_rows > 0) {
+                            if (count($imagenes) > 0) {
+            foreach($imagenes as $index => $ruta){
 
-                                $active = "active";
-
-                                while ($row_img = $res_img->fetch_assoc()) {
-                                    $ruta = htmlspecialchars($row_img["foto"]);
-
-                                    echo '<div class="carousel-item ' . $active . '">
+                                    echo '<div class="carousel-item ' .
+                                    ($index === 0 ? "active":"")
+                                    . '">
                         <img class="d-block w-100 main-image" src="' . $ruta . '" alt="Imagen del auto">
                     </div>';
 
-                                    // Solo la primera debe tener active
-                                    $active = "";
                                 }
                             } else {
                                 // Si no hay imágenes, insertar una por defecto
@@ -152,24 +153,21 @@ $res_img = $conn->query($sql_img);
 
                         <!-- Indicadores (Miniaturas) -->
                         <div class="carousel-indicators carousel-indicators-thumb mx-auto">
+   <?php
+            if (count($imagenes) > 0) {
+                foreach ($imagenes as $index => $ruta) {
 
-                            <!-- Miniatura 1 -->
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0"
-                                class="active" aria-current="true" aria-label="Slide 1">
-                                <img src="images/car1.png" alt="Miniatura 1">
-                            </button>
-
-                            <!-- Miniatura 2 -->
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1"
-                                aria-label="Slide 2">
-                                <img src="images/car2.webp" alt="Miniatura 2">
-                            </button>
-
-                            <!-- Miniatura 3 -->
-                            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2"
-                                aria-label="Slide 3">
-                                <img src="images/car3.webp" alt="Miniatura 3">
-                            </button>
+                    echo '
+                    <button type="button" 
+                        data-bs-target="#carouselExampleDark" 
+                        data-bs-slide-to="'.$index.'" 
+                        class="'.($index === 0 ? "active" : "").'"
+                        aria-label="Slide '.($index+1).'">
+                        <img src="'.$ruta.'" alt="Miniatura '.($index+1).'">
+                    </button>';
+                }
+            }
+            ?>
 
                         </div>
                     </div>
