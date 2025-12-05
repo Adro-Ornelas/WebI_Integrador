@@ -91,43 +91,49 @@
       <div style="background-color: #ebf0eb;"
       class="container p-3 rounded border border-2 border-dark shadow w-50">
       
-      <form>
-        <img
-          class="img-fluid mb-4 p-3 mx-auto d-block rounded-pill bg-white border border-dark"
-          src="images/ao-rent-logo-car.png"
-          alt="AO Rent Logo Car"
-          width="320"
-          height="140"
-        />
-        <!-- <h1 class="h3 mb-3 fw-normal">Please sign in</h1> -->
-        <div class="form-floating">
-          <input
-            type="email"
-            class="form-control px-4 rounded-pill"
-            id="floatingInput"
-            placeholder="name@example.com"
-          />
-          <label for="floatingInput">Username</label>
-        </div>
-        <div class="my-3 form-floating">
-          <input
-            type="password"
-            class="form-control px-4 rounded-pill"
-            id="floatingPassword"
-            placeholder="Password"
-          />
-          <label for="floatingPassword">Password</label>
-          
-        </div>
-        <button 
-        class="btn btn-secondary w-100 py-2 my-2 rounded-pill" type="submit">
-          INICIAR SESIÓN
-        </button>
+      <form action="login.php" method="POST">
+    <img
+      class="img-fluid mb-4 p-3 mx-auto d-block rounded-pill bg-white border border-dark"
+      src="images/ao-rent-logo-car.png"
+      alt="AO Rent Logo Car"
+      width="320"
+      height="140"
+    />
+
+    <div class="form-floating">
+      <input
+        type="text"
+        name="username"
+        class="form-control px-4 rounded-pill"
+        id="floatingInput"
+        placeholder="Usuario"
+        required
+      />
+      <label for="floatingInput">Username</label>
+    </div>
+
+    <div class="my-3 form-floating">
+      <input
+        type="password"
+        name="password"
+        class="form-control px-4 rounded-pill"
+        id="floatingPassword"
+        placeholder="Password"
+        required
+      />
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <button class="btn btn-secondary w-100 py-2 my-2 rounded-pill" type="submit">
+      INICIAR SESIÓN
+    </button>
+</form>
+
+
         <p class="mt-3 mb-0 text-body-secondary text-center">Al iniciar sesión aceptas nuestros</p>
         <a href="#" class="link-secondary mt-0 mb-3">
           <strong>Términos de servicio</strong>
         </a>
-      </form>
       
       </div>
     </main>
