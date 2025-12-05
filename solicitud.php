@@ -119,7 +119,7 @@ $valorHora = $infoPrecio['valorhora'];
                         <!-- UBICACION INICIO -->
                         <label class="form-label fw-bold">Punto de Inicio</label>
                         <div class="input-group mb-3">
-                            <input type="text" id="ubicInicio" name="ubic_inicio" class="form-control" readonly
+                            <input type="text" id="ubicInicio" name="ubic_inicio" class="form-control"
                                 required>
                             <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                                 data-bs-target="#modalMapa" onclick="modoUbicacion='inicio'">
@@ -130,7 +130,7 @@ $valorHora = $infoPrecio['valorhora'];
                         <!-- UBICACION FINAL -->
                         <label class="form-label fw-bold">Punto Final</label>
                         <div class="input-group mb-3">
-                            <input type="text" id="ubicFinal" name="ubic_final" class="form-control" readonly required>
+                            <input type="text" id="ubicFinal" name="ubic_final" class="form-control" required>
                             <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
                                 data-bs-target="#modalMapa" onclick="modoUbicacion='final'">
                                 Seleccionar
