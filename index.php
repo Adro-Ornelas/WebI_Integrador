@@ -45,7 +45,7 @@
                     en constante mantenimiento y detallado para la mejor presentación. Los rangos de precios aproximados
                     son dentro del límite del Anillo Periférico Manuel Gómez Morin de la Zona Metropolitana de
                     Guadalajara (ZMG)</p>
-                <a href="#" class="boton-catalogo mt-5 py-3">Ver Catálogo</a>
+                <a href="#catalogo" class="boton-catalogo mt-5 py-3">Ver Catálogo</a>
             </div>
             <div class="col">
                 <div class="carousel-container">

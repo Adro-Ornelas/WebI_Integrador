@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
                     <p class='card-text text-muted' style='font-size: 0.9rem;'>
                         ".substr($auto['descripcion'], 0, 120)."...
                     </p>
-                    <a href='descauto.php?id={$auto['id']}' class='btn btn-primary w-100'>
+                    <a href='descauto.php?id={$auto['id']}' class='btn w-100' style='background: #919191; color: white;'>
                         Ver detalles
                     </a>
                 </div>
