@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 05, 2025 at 01:07 AM
+-- Generation Time: Dec 05, 2025 at 06:04 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -68,6 +68,29 @@ INSERT INTO `auto` (`id`, `apodo`, `year`, `descripcion`, `marca`, `valorhora`) 
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `faq`
+--
+
+CREATE TABLE `faq` (
+  `id` bigint(10) NOT NULL,
+  `titulo` varchar(100) NOT NULL,
+  `contenido` varchar(400) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `titulo`, `contenido`) VALUES
+(1, '¿Con cuánta anticipación debo reservar un auto clásico?', 'Un servicio puede presentar su solicitud desde 3 días naturales antes de la fecha del evento, sin embargo, en estas cirunsatancias, la elección de aceptar o no el servicio es decisión de la empresa.'),
+(2, '¿El servicio incluye chofer?', 'Todos nuestros autos se rentan con chofer capacitado para garantizar seguridad y puntualidad.'),
+(3, '¿El precio de renta incluye gasolina y traslado?', 'Sí, el precio incluye todos los suministros necesarios para el transporte desde las ubicaciones de inicio, hasta las ubicaciones destino, acompañado de amenidades incluidas como música selecta y botellas de agua.'),
+(4, '¿Se pueden decorar los autos con flores o accesorios?', 'Por supuesto que sí!!!\r\nDe hecho, sugerimos personalizar el adorno floral predeterminado del automóvil el cuál está incluido, pero puede ser sustituido por cualquiera de la selección del cliente, siempre y cuando tenga una manera de sujetarse firmemente al automóvil.'),
+(5, 'q', 'asdasdasas');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `foto_auto`
 --
 
@@ -83,21 +106,21 @@ CREATE TABLE `foto_auto` (
 
 INSERT INTO `foto_auto` (`id`, `id_auto`, `foto`) VALUES
 (1, 4, 'http://localhost/ao_rent_cars/cobra1.jpg'),
-(2, 4, 'http://localhost/ao_rent_cars/cobra1.jpg'),
+(2, 4, 'http://localhost/ao_rent_cars/cobra2.jpg'),
 (3, 4, 'http://localhost/ao_rent_cars/cobra3.jpg'),
-(4, 4, 'http://localhost/ao_rent_cars/cobra3.jpg'),
+(4, 4, 'http://localhost/ao_rent_cars/cobra4.jpg'),
 (5, 4, 'http://localhost/ao_rent_cars/cobra5.jpg'),
 (6, 3, 'http://localhost/ao_rent_cars/dorado1.jpeg'),
-(7, 3, 'http://localhost/ao_rent_cars/dorado1.jpeg'),
+(7, 3, 'http://localhost/ao_rent_cars/dorado2.jpeg'),
 (8, 3, 'http://localhost/ao_rent_cars/dorado3.jpeg'),
 (9, 3, 'http://localhost/ao_rent_cars/dorado4.jpeg'),
-(10, 2, 'http://localhost/ao_rent_cars/dorado4.jpeg'),
-(11, 2, 'http://localhost/ao_rent_cars/dorado4.jpeg'),
+(10, 2, 'http://localhost/ao_rent_cars/frankie1.jpg'),
+(11, 2, 'http://localhost/ao_rent_cars/frankie2.jpg'),
 (12, 2, 'http://localhost/ao_rent_cars/frankie3.jpg'),
 (13, 2, 'http://localhost/ao_rent_cars/frankie4.jpg'),
-(14, 1, 'http://localhost/ao_rent_cars/frankie4.jpg'),
+(14, 1, 'http://localhost/ao_rent_cars/vocho1.jpg'),
 (15, 1, 'http://localhost/ao_rent_cars/vocho2.jpg'),
-(16, 1, 'http://localhost/ao_rent_cars/vocho4.jpg'),
+(16, 1, 'http://localhost/ao_rent_cars/vocho3.jpg'),
 (17, 1, 'http://localhost/ao_rent_cars/vocho4.jpg');
 
 -- --------------------------------------------------------
@@ -163,6 +186,12 @@ ALTER TABLE `auto`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `faq`
+--
+ALTER TABLE `faq`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `foto_auto`
 --
 ALTER TABLE `foto_auto`
@@ -192,6 +221,12 @@ ALTER TABLE `solicitud_renta_auto`
 --
 ALTER TABLE `auto`
   MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `faq`
+--
+ALTER TABLE `faq`
+  MODIFY `id` bigint(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `foto_auto`

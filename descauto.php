@@ -1,5 +1,24 @@
-<!-- descauto.html -->
+<?php
 
+require_once "conexion.php";
+
+// Necesita id
+$id = $_GET['id'];
+
+// Obtner información del auto
+
+// Obtener FAQs de la BD
+$sql = "SELECT id, apodo, year, descripcion, marca, valorhora FROM auto WHERE id='$id'";
+$result = $conn->query($sql);
+$row = mysqli_fetch_array($result);
+
+// Obtiene imágenes de autos
+$sql_img = "SELECT foto FROM foto_auto WHERE id_auto = '$id';";
+$res_img = $conn->query($sql_img);
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -90,20 +109,30 @@
 
                         <!-- Diapositivas Principales -->
                         <div class="carousel-inner">
-                            <!-- Slide 1 -->
-                            <div class="carousel-item active">
-                                <img class="d-block w-100 main-image" src="images/car1.png" alt="Coche Deportivo 1">
-                            </div>
 
-                            <!-- Slide 2 -->
-                            <div class="carousel-item">
-                                <img class="d-block w-100 main-image" src="images/car2.webp" alt="Coche Rojo 2">
-                            </div>
+                            <?php
+                            if ($res_img->num_rows > 0) {
 
-                            <!-- Slide 3 -->
-                            <div class="carousel-item">
-                                <img class="d-block w-100 main-image" src="images/car3.webp" alt="Coche Azul 3">
-                            </div>
+                                $active = "active";
+
+                                while ($row_img = $res_img->fetch_assoc()) {
+                                    $ruta = htmlspecialchars($row_img["foto"]);
+
+                                    echo '<div class="carousel-item ' . $active . '">
+                        <img class="d-block w-100 main-image" src="' . $ruta . '" alt="Imagen del auto">
+                    </div>';
+
+                                    // Solo la primera debe tener active
+                                    $active = "";
+                                }
+                            } else {
+                                // Si no hay imágenes, insertar una por defecto
+                                echo '
+                <div class="carousel-item active">
+                    <img class="d-block w-100 main-image" src="images/no-image.png" alt="Sin imagen">
+                </div>';
+                            }
+                            ?>
                         </div>
 
                         <!-- Controles (Flechas) -->
@@ -150,19 +179,27 @@
 
 
             <div class="col">
-                <h2 id="autoName" class="fs-1 text-center" style="color: black;">Nombre del vehículo</h2>
-                <h2 class="fs-2">
+
+                <h2 id="autoName" class="fs-1 text-center" style="color: black;">
+                    <?= $row['apodo'] ?>
+                </h2>
+                <h2 class="fs-2 text-center" style="color: black;">
+                    <?php
+                    echo $row['marca'] . " - " . $row['year']
+                        ?>
+                </h2>
+                <h2 class="fs-3">
                     <dt>Descripción:</dt>
                 </h2>
-                <p id="autoDesc" class="fs-5 m-auto">Para ofrecer el servicio más adecuado para cada ocasión, tenemos
-                    diversidad de vehículos en la flota,
-                    en constante mantenimiento y detallado para la mejor presentación. Los rangos de precios aproximados
-                    son dentro del límite del Anillo Periférico Manuel Gómez Morin de la Zona Metropolitana de
-                    Guadalajara (ZMG)</p>
+                <p id="autoDesc" class="fs-5 m-auto">
+                    <?= $row['descripcion'] ?>
+                </p>
 
                 <div class="d-flex justify-content-end">
                     <div class="d-flex flex-column justify-content-end mx-5">
-                        <h2 class="h2 mt-4">$ Precio</h2>
+                        <h2 class="h2 mt-4">
+                            $ <?= $row['valorhora'] ?>
+                        </h2>
                         <h2 class="fs-4 text-secondary">(POR HORA)</h2>
                         <a href="#" class="btn btn-secondary rounded-pill mt-5 py-3">Solicitar reserva</a>
                     </div>
@@ -176,16 +213,20 @@
     </main>
 
     <script src="js/sidebar.js" async defer></script>
-    
+
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
         integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-        
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
 
 </body>
 
