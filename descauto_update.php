@@ -13,7 +13,7 @@ $sql = "UPDATE auto
         WHERE id='$id'";
 
 if ($conn->query($sql)) {
-    header("Location: auto_admin.php?id=".$id."&ok=1");
+    header("Location: flota.php?id=".$id."&ok=1");
 } else {
     echo "Error al actualizar: " . $conn->error;
 }
