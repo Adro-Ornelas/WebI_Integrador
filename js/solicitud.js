@@ -89,7 +89,7 @@ let selectedLng = null;
 document.getElementById('modalMapa').addEventListener('shown.bs.modal', function () {
 
     if (!map) {
-        map = L.map('map').setView([19.4326, -99.1332], 12);
+        map = L.map('map').setView([20.66682, -103.39182], 13);
 
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19

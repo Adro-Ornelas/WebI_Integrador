@@ -6,16 +6,29 @@ $hora_inicio  = $_POST['hora_inicio'];
 $hora_fin     = $_POST['hora_fin'];
 $ubic_inicio  = $_POST['ubic_inicio'];
 $ubic_final   = $_POST['ubic_final'];
+$nombre       = $_POST['nombre'];
+$tel          = $_POST['tel'];
+$estado = "pendiente";
 
 if (!$id_auto || !$fecha || !$hora_inicio || !$hora_fin || !$ubic_inicio || !$ubic_final) {
     die("Error: Faltan campos.");
 }
 
 $stmt = $conn->prepare("
-    INSERT INTO solicitud_renta (fecha_evento, hora_inicio, hora_final, punto_inicio, punto_final)
-    VALUES (?, ?, ?, ?, ?)
+    INSERT INTO solicitud_renta 
+    (username, userphone, fecha_evento, hora_inicio, hora_final, punto_inicio, punto_final, estado)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)
 ");
-$stmt->bind_param("sssss", $fecha, $hora_inicio, $hora_fin, $ubic_inicio, $ubic_final);
+$stmt->bind_param("ssssssss", 
+    $nombre, 
+    $tel,
+    $fecha, 
+    $hora_inicio, 
+    $hora_fin, 
+    $ubic_inicio, 
+    $ubic_final,
+    $estado
+);
 
 if (!$stmt->execute()) {
     die("Error al guardar solicitud: " . $stmt->error);

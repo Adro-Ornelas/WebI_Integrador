@@ -115,7 +115,16 @@ $valorHora = $infoPrecio['valorhora'];
 
                         <input type="hidden" name="id_auto" value="<?php echo $idAuto; ?>">
                         <input type="hidden" name="fecha" id="inputFecha">
-
+                        <label class="form-label fw-bold">Nombre</label>
+                        <div class="input-group mb-3">
+                            <input type="text" id="nombre" name="nombre" class="form-control"
+                                required>
+                        </div>
+                        <label class="form-label fw-bold">Telefono</label>
+                        <div class="input-group mb-3">
+                            <input type="text" id="tel" name="tel" class="form-control"
+                                required>
+                        </div>
                         <!-- UBICACION INICIO -->
                         <label class="form-label fw-bold">Punto de Inicio</label>
                         <div class="input-group mb-3">
@@ -174,8 +183,6 @@ $valorHora = $infoPrecio['valorhora'];
                     </div>
 
                     <div class="modal-body">
-                        <input id="buscarDireccion" class="form-control mb-2" placeholder="Buscar dirección">
-
                         <div id="map" style="height: 400px;"></div>
                     </div>
 
