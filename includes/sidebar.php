@@ -22,14 +22,14 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#" class="selected">
+                    <a href="index.php" class="selected">
                         <i class="bxr  bxs-home-alt-2"></i>
                         <span>Inicio</span>
                     </a>
                 </li>
 
                 <li>
-                    <a href="#">
+                    <a href="index.php#catalogo">
                         <i class="bxr  bxs-book-bookmark"></i>
                         <span>Catalogo</span>
                     </a>
