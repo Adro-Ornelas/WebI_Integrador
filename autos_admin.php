@@ -28,7 +28,7 @@ if ($result->num_rows > 0) {
                     <p class='card-text text-muted' style='font-size: 0.9rem;'>
                         ".substr($auto['descripcion'], 0, 120)."...
                     </p>
-                    <a href='descauto_admin.php?id={$auto['id']}' class='btn btn-primary w-100'>
+                    <a href='descauto_admin.php?id={$auto['id']}' class='btn w-100' style='background: #919191; color: white;'>
                         Editar
                     </a>
                 </div>
@@ -49,7 +49,7 @@ echo  '<div class="col-md-4 mb-4">
             </div>
 
             <!-- Botón al fondo -->
-            <a href="descauto_admin.php?id=1" class="btn btn-primary w-100 mt-auto">
+            <a href="descauto_admin.php?id=1" class="btn w-100 mt-auto" style="background: #919191; color: white;">
                 Agregar
             </a>
         </div>

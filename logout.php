@@ -4,7 +4,7 @@ session_unset();
 session_destroy();
 
 // Regresa al index al cerrar sesión
-header("Location: index.html");
+header("Location: index.php");
 
 exit;
 ?>

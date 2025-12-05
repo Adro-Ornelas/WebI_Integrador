@@ -8,7 +8,7 @@ $ubic_inicio  = $_POST['ubic_inicio'];
 $ubic_final   = $_POST['ubic_final'];
 $nombre       = $_POST['nombre'];
 $tel          = $_POST['tel'];
-$estado = "pendiente";
+$estado = "PENDIENTE";
 
 if (!$id_auto || !$fecha || !$hora_inicio || !$hora_fin || !$ubic_inicio || !$ubic_final) {
     die("Error: Faltan campos.");

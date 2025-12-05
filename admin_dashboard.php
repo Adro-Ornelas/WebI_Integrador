@@ -146,7 +146,7 @@ require_once "auth_admin.php";
 
         <!-- Columna 2 -->
         <div class="col-md-4 d-flex">
-            <div class="panel-card w-100 border border-black" onclick="window.location.href='solicitudes.php'">
+            <div class="panel-card w-100 border border-black" onclick="window.location.href='solicitud_admin_lista.php'">
                 <img src="images/solicitudes.png" alt="Solicitudes Icon">
                 <h4 class="fw-bold text-center">Gestionar solicitudes</h4>
             </div>
