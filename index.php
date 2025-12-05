@@ -32,53 +32,11 @@
 </head>
 
 <body>
-    <header>
-        <div class="izquierda">
-            <div class="menu-container">
-                <div class="menu" id="menu">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="brand">
-            <h1 class="nombre">AoRent</h1>
-        </div>
-
-        <div class="derecha">
-            <a href="login.html">Iniciar Sesión</a>
-        </div>
-    </header>
-
-    <div class="sidebar" id="sidebar">
-        <nav>
-            <ul>
-                <li>
-                    <a href="#" class="selected">
-                        <i class="bxr  bxs-home-alt-2"></i>
-                        <span>Inicio</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="bxr  bxs-book-bookmark"></i>
-                        <span>Catalogo</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="faq.php">
-                        <i class="bxr  bxs-message-question-mark"></i>
-                        <span>FaQ</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    <main id="main">
-        <div class="row align-items-start pt-3 mt-5" style="gap: 2rem;">
+    <?php
+    include 'includes/sidebar.php';
+    ?>
+    <main id="main" class="row">
+        <div class="row align-items-start pt-3 mt-5 mb-5 p-5" style="gap: 2rem;">
             <div class="col">
                 <h1 style="color: black;">RENTA UN</h1>
                 <h1 style="color: var(--topbar-color);">CARRO AHORA</h1>
@@ -155,6 +113,16 @@
             </div>
 
 
+        </div>
+
+        <div id="catalogo">
+            <div class="container">
+                <div class="row">
+                    <?php
+                    include 'autos.php';
+                    ?>
+                </div>
+            </div>
         </div>
     </main>
     <script src="js/sidebar.js" async defer></script>
