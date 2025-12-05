@@ -54,7 +54,7 @@ $result = $conn->query($sql);
     <div class="sidebar" id="sidebar">
         <nav>
             <ul>
-                <li><a href="#" class="selected">
+                <li><a href="index.html">
                         <i class="bxr  bxs-home-alt-2"></i>
                         <span>Inicio</span>
                     </a>
@@ -67,7 +67,7 @@ $result = $conn->query($sql);
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="#"  class="selected">
                         <i class="bxr  bxs-message-question-mark"></i>
                         <span>FaQ</span>
                     </a>
