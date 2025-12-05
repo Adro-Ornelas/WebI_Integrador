@@ -50,12 +50,28 @@ $result = $conn->query($sql);
     <div class="sidebar" id="sidebar">
         <nav>
             <ul>
-                <li><a href="#" class="selected"><span>Inicio</span></a></li>
-                <li><a href="#"><span>Catálogo</span></a></li>
-                <li><a href="#"><span>FAQ</span></a></li>
+                <li><a href="index.html">
+                        <i class="bxr  bxs-home-alt-2"></i>
+                        <span>Inicio</span>
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#">
+                        <i class="bxr  bxs-book-bookmark"></i>
+                        <span>Catalogo</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="selected">
+                        <i class="bxr  bxs-message-question-mark"></i>
+                        <span>FaQ</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </div>
+
 
     <div class="container py-5 my-5">
         <h1 class="h1 text-center mb-4">FAQ - Administrar</h1>
