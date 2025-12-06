@@ -1,4 +1,7 @@
 <?php
+
+require_once "auth_admin.php";
+
 include "conexion.php";
 
 // Obtener todas las solicitudes
@@ -13,6 +16,7 @@ $query = $conn->query("
     FROM solicitud_renta s
     ORDER BY s.estado ASC
 ");
+
 ?>
 
 <!DOCTYPE html>

@@ -1,4 +1,7 @@
 <?php
+
+require_once "auth_admin.php";
+
 require_once "conexion.php";
 
 // Obtener FAQs de la BD
@@ -27,51 +30,7 @@ $result = $conn->query($sql);
 
 <body class="bg-light">
 
-    <header>
-        <div class="izquierda">
-            <div class="menu-container">
-                <div class="menu" id="menu">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="brand">
-            <h1 class="nombre">AoRent</h1>
-        </div>
-
-        <div class="derecha">
-            <a href="logout.php">Cerrar sesión</a>
-        </div>
-    </header>
-
-    <div class="sidebar" id="sidebar">
-        <nav>
-            <ul>
-                <li><a href="index.html">
-                        <i class="bxr  bxs-home-alt-2"></i>
-                        <span>Inicio</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="bxr  bxs-book-bookmark"></i>
-                        <span>Catalogo</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="selected">
-                        <i class="bxr  bxs-message-question-mark"></i>
-                        <span>FaQ</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-
+<?php include 'includes/sidebar.php'; ?>
 
     <div class="container py-5 my-5">
         <h1 class="h1 text-center mb-4">FAQ - Administrar</h1>
@@ -93,14 +52,14 @@ $result = $conn->query($sql);
                                 <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapse<?= $id ?>">
                                     <input type="text" name="titulo[<?= $id ?>]"
-                                        class="form-control border-0 bg-transparent fw-bold" value="<?= $titulo ?>">
+                                        class="form-control border-0 bg-transparent fw-bold fs-4" value="<?= $titulo ?>">
                                 </button>
                             </h2>
 
                             <div id="collapse<?= $id ?>" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                                 <div class="accordion-body">
 
-                                    <textarea name="contenido[<?= $id ?>]" class="form-control"
+                                    <textarea name="contenido[<?= $id ?>]" class="form-control fs-5"
                                         rows="4"><?= $contenido ?></textarea>
 
                                     <!-- Botón eliminar -->

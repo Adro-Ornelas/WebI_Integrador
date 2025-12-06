@@ -1,3 +1,9 @@
+<?php
+// Para que la sidebar detecte si es usuario admin o clientes
+session_start();
+?>
+
+
 <!DOCTYPE html>
 <html>
 

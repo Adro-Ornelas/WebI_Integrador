@@ -28,7 +28,7 @@ if ($result->num_rows === 1) {
 
 } else {
     // Login incorrecto
-    header("Location: login.php?error=credenciales");
+    header("Location: login.html");
     
 }
 

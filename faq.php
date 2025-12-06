@@ -1,4 +1,8 @@
 <?php
+
+// Para que la sidebar detecte si es usuario admin o clientes
+session_start();
+
 require_once "conexion.php";
 
 // Obtener FAQs de la BD
@@ -31,50 +35,9 @@ $result = $conn->query($sql);
 
 <body class="bg-light">
 
-    <header>
-        <div class="izquierda">
-            <div class="menu-container">
-                <div class="menu" id="menu">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="brand">
-            <h1 class="nombre">AoRent</h1>
-        </div>
-
-        <div class="derecha">
-            <a href="logout.php">Cerrar sesión</a>
-        </div>
-    </header>
-
-    <div class="sidebar" id="sidebar">
-        <nav>
-            <ul>
-                <li><a href="index.html">
-                        <i class="bxr  bxs-home-alt-2"></i>
-                        <span>Inicio</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="bxr  bxs-book-bookmark"></i>
-                        <span>Catalogo</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#"  class="selected">
-                        <i class="bxr  bxs-message-question-mark"></i>
-                        <span>FaQ</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <?php
+    include 'includes/sidebar.php';
+    ?>
 
 
 
@@ -94,13 +57,13 @@ $result = $conn->query($sql);
 
                     <div class="accordion-item my-4 border border-dark">
                         <h2 class="accordion-header" id="heading<?php echo $id; ?>">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                            <button class="accordion-button collapsed fs-4" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#collapse<?php echo $id; ?>">
                                 <?php echo $titulo; ?>
                             </button>
                         </h2>
                         <div id="collapse<?php echo $id; ?>" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                            <div class="accordion-body">
+                            <div class="accordion-body fs-4">
                                 <?php echo $contenido; ?>
                             </div>
                         </div>

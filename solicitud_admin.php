@@ -1,4 +1,8 @@
 <?php
+
+
+require_once "auth_admin.php";
+
 include "conexion.php";
 
 // ID de la solicitud enviada por GET

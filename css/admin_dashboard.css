@@ -1,0 +1,50 @@
+body,
+html {
+    height: 100%;
+}
+
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.title-row {
+    flex: 0 0 auto;
+}
+
+.cards-row {
+    flex: 1 1 auto;
+}
+
+/* Tarjeta completa */
+.panel-card {
+    background-color: #eef4fe;
+    border-radius: 12px;
+    padding: 30px 15px;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    height: 100%;
+
+    /* Centrado perfecto */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.panel-card:hover {
+    transform: scale(1.03);
+    background-color: #0b5ed7;
+}
+
+/* Imagen centrada */
+.panel-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px auto;
+    /* centro horizontal */
+}

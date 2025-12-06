@@ -23,106 +23,14 @@ require_once "auth_admin.php";
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/navbar.css">
 
-
-    <style>
-        body, html {
-            height: 100%;
-        }
-
-        .page-wrapper {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .title-row {
-            flex: 0 0 auto;
-        }
-
-        .cards-row {
-            flex: 1 1 auto;
-        }
-
-        /* Tarjeta completa */
-        .panel-card {
-            background-color: #eef4fe;
-            border-radius: 12px;
-            padding: 30px 15px;
-            color: black;
-            cursor: pointer;
-            transition: 0.2s ease-in-out;
-            height: 100%;
-            
-            /* Centrado perfecto */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .panel-card:hover {
-            transform: scale(1.03);
-            background-color: #0b5ed7;
-        }
-
-        /* Imagen centrada */
-        .panel-card img {
-            width: 80px;
-            height: 80px;
-            object-fit: contain;
-            display: block;
-            margin: 0 auto 15px auto; /* centro horizontal */
-        }
-    </style>
+        <link rel="stylesheet" href="css/admin_dashboard.css">
 
 </head>
 <body>
 
-        <header>
-            <div class="izquierda">
-                <div class="menu-container">
-                    <div class="menu" id="menu">
-                        <div></div>
-                        <div></div>
-                        <div></div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="brand">
-                <h1 class="nombre">AoRent</h1>
-            </div>
-
-            <div class="derecha">
-                <a href="logout.php">Cerrar sesión</a>
-            </div>
-        </header>
-
-        <div class="sidebar" id="sidebar">
-            <nav>
-                <ul>
-                    <li>
-                        <a href="#" class="selected">
-                            <i class="bxr  bxs-home-alt-2"></i>
-                            <span>Inicio</span>
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="#">
-                            <i class="bxr  bxs-book-bookmark"></i>
-                            <span>Catalogo</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="bxr  bxs-message-question-mark"></i>
-                            <span>FaQ</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+    <?php
+    include 'includes/sidebar.php';
+    ?>
 
 <div class="container py-4 page-wrapper">
 

@@ -58,55 +58,12 @@ while ($img = $res_img->fetch_assoc()) {
 
 </head>
 
-<body>
-    <header>
-        <div class="izquierda">
-            <div class="menu-container">
-                <div class="menu" id="menu">
-                    <div></div>
-                    <div></div>
-                    <div></div>
-                </div>
-            </div>
-        </div>
-
-        <div class="brand">
-            <h1 class="nombre">AoRent</h1>
-        </div>
-
-        <div class="derecha">
-            <a href="login.html">Iniciar Sesión</a>
-        </div>
-    </header>
-
-    <div class="sidebar" id="sidebar">
-        <nav>
-            <ul>
-                <li>
-                    <a href="#" class="selected">
-                        <i class="bxr  bxs-home-alt-2"></i>
-                        <span>Inicio</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <i class="bxr  bxs-book-bookmark"></i>
-                        <span>Catalogo</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="bxr  bxs-message-question-mark"></i>
-                        <span>FaQ</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+    <?php
+    include 'includes/sidebar.php';
+    ?>
+    
     <main id="main">
         <div class="row pt-3 mt-5 align-items-center" style="gap: 2rem;">
-
             <div class="col">
                 <div class="carousel-container">
                     <!-- Carrusel -->
