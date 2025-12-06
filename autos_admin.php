@@ -18,7 +18,7 @@ if ($result->num_rows > 0) {
         echo "
         <div class='col-md-4 mb-4'>
             <div class='card h-100 shadow-sm'>
-                <img class='card-img-top' src='{$foto}' alt='{$auto['apodo']}'>
+                <img style='height: 300px; object-fit: cover;' class='card-img-top' src='{$foto}' alt='{$auto['apodo']}'>
                 <div class='card-body'>
                     <h5 class='card-title'>{$auto['apodo']} ({$auto['year']})</h5>
                     <p class='card-text'>
